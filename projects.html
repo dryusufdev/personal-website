@@ -28,7 +28,6 @@
         <li><a href="./projects.html" class="nav-link active">Projects</a></li>
         <li><a href="./gear.html" class="nav-link">Gear</a></li>
         <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="./contact.html" class="nav-link">Contact</a></li>
         <li><a href="./assets/Mahmoud-Yusuf-CV.pdf" class="nav-link nav-cv" download>CV ↗</a></li>
       </ul>
     </nav>
@@ -37,7 +36,7 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow fade">things I've made</p>
+        <p class="eyebrow fade">Things I&rsquo;ve Made</p>
         <h1 class="fade d1">Projects</h1>
         <p class="fade d1">Research, education tools, and small builds, mostly around the brain.</p>
       </div>
@@ -46,12 +45,15 @@
     <section class="section">
       <div class="container">
 
-        <!-- Featured: Hydrocephalus + NeuroFlow inside -->
+        <!-- Featured: Hydrocephalus + NeuroFlow nested -->
         <article class="feature fade">
           <div class="feature-grid">
             <div class="feature-shot">
-              <img src="./assets/projects/hydrocephalus.jpg" alt="Idiopathic normal pressure hydrocephalus research" loading="lazy" onerror="this.closest('.feature-shot').classList.add('no-img')" />
-              <span class="shot-fallback" aria-hidden="true">Hydrocephalus</span>
+              <div class="title-card">
+                <p class="tc-title">Multimodal Prediction of Shunt Responsiveness</p>
+                <p class="tc-sub">in Idiopathic Normal Pressure Hydrocephalus</p>
+                <p class="tc-label">Narrative Review · Florida State University · 2026</p>
+              </div>
             </div>
             <div class="feature-text">
               <h2>Idiopathic Normal Pressure Hydrocephalus Publication / Presentation</h2>
@@ -62,45 +64,57 @@
               </p>
 
               <p class="related-label">Related build</p>
-              <a class="related-build" href="https://neuroflows.vercel.app/" target="_blank" rel="noopener">
-                <span class="rb-shot">
-                  <img src="./assets/projects/neuroflow.jpg" alt="NeuroFlow 3D CSF flow visualization" loading="lazy" onerror="this.closest('.rb-shot').classList.add('no-img')" />
-                </span>
-                <span class="rb-text">
+              <div class="rb-block">
+                <div class="rb-head">
                   <strong>NeuroFlow</strong>
-                  <span class="d">Interactive 3D CSF flow visualization connected to the hydrocephalus work.</span>
-                  <span class="go">open ↗</span>
-                </span>
-              </a>
+                  <a class="go" href="https://neuroflows.vercel.app/" target="_blank" rel="noopener">open site ↗</a>
+                </div>
+                <p class="rb-desc">Interactive 3D CSF flow visualization connected to the hydrocephalus work.</p>
+                <span class="tags"><span>React</span><span>Three.js</span><span>Neuroscience</span></span>
+              </div>
             </div>
           </div>
         </article>
 
         <!-- Two smaller projects -->
         <div class="projects">
-          <a class="project fade d1" href="https://lifescore.dev/" target="_blank" rel="noopener">
-            <span class="project-shot">
-              <img src="./assets/projects/lifescore.jpg" alt="LifeScore, finance and lifestyle guide" loading="lazy" onerror="this.closest('.project-shot').classList.add('no-img')" />
-              <span class="shot-fallback" aria-hidden="true">LifeScore</span>
-            </span>
-            <span class="project-body">
-              <span class="project-head"><h3>LifeScore</h3><span class="go" aria-hidden="true">↗</span></span>
+          <article class="project fade d1">
+            <div class="site-preview">
+              <div class="sp-bar"><span class="sp-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="sp-name">lifescore.dev</span></div>
+              <div class="sp-frame">
+                <div class="sp-fallback">
+                  <img src="./assets/projects/lifescore-icon.png" alt="" loading="lazy" onerror="this.style.display='none'" />
+                  <span class="fb-name">LifeScore</span>
+                  <span class="fb-sub">open site ↗</span>
+                </div>
+                <iframe data-src="https://lifescore.dev/" title="LifeScore live preview" loading="lazy" referrerpolicy="no-referrer" tabindex="-1"></iframe>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-head"><h3>LifeScore</h3><a class="go" href="https://lifescore.dev/" target="_blank" rel="noopener">open site ↗</a></div>
               <p>A finance and lifestyle guide for students learning credit, banking, investing, and better everyday decisions.</p>
               <span class="tags"><span>finance</span><span>web</span><span>student life</span></span>
-            </span>
-          </a>
+            </div>
+          </article>
 
-          <a class="project fade d1" href="https://brainbasicslab.vercel.app/" target="_blank" rel="noopener">
-            <span class="project-shot">
-              <img src="./assets/projects/brain-basics.jpg" alt="Brain Basics Lab, neuroscience education" loading="lazy" onerror="this.closest('.project-shot').classList.add('no-img')" />
-              <span class="shot-fallback" aria-hidden="true">Brain Basics Lab</span>
-            </span>
-            <span class="project-body">
-              <span class="project-head"><h3>Brain Basics Lab</h3><span class="go" aria-hidden="true">↗</span></span>
+          <article class="project fade d1">
+            <div class="site-preview">
+              <div class="sp-bar"><span class="sp-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="sp-name">brainbasicslab.vercel.app</span></div>
+              <div class="sp-frame">
+                <div class="sp-fallback">
+                  <img src="./assets/projects/brain-basics.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                  <span class="fb-name">Brain Basics Lab</span>
+                  <span class="fb-sub">open site ↗</span>
+                </div>
+                <iframe data-src="https://brainbasicslab.vercel.app/" title="Brain Basics Lab live preview" loading="lazy" referrerpolicy="no-referrer" tabindex="-1"></iframe>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-head"><h3>Brain Basics Lab</h3><a class="go" href="https://brainbasicslab.vercel.app/" target="_blank" rel="noopener">open site ↗</a></div>
               <p>A neuroscience education project for younger students using visuals, lessons, quizzes, and hands-on activities.</p>
               <span class="tags"><span>education</span><span>outreach</span><span>web</span></span>
-            </span>
-          </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>

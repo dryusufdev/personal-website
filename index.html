@@ -59,7 +59,6 @@
         <li><a href="./projects.html" class="nav-link">Projects</a></li>
         <li><a href="./gear.html" class="nav-link">Gear</a></li>
         <li><a href="./gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="./contact.html" class="nav-link">Contact</a></li>
         <li><a href="./assets/Mahmoud-Yusuf-CV.pdf" class="nav-link nav-cv" download>CV ↗</a></li>
       </ul>
     </nav>
@@ -68,7 +67,7 @@
   <main id="main">
     <section class="home-hero">
       <div class="container">
-        <h1 class="type fade in" data-text="hello, Amir here"><span class="type-out">hello, Amir here</span><span class="caret" aria-hidden="true"></span></h1>
+        <h1 class="type fade in" data-text="hello, Amir here" aria-label="hello, Amir here"><span class="type-out" aria-hidden="true"></span><span class="caret" aria-hidden="true"></span></h1>
         <p class="home-sub fade in d1">
           <b>neuroscience student at Florida State University.</b> into medicine, research,
           design, music, coding, fitness, and building small things that make life easier
@@ -111,62 +110,43 @@
       <div class="container">
         <div class="hub-grid">
 
-          <!-- Spotify -->
-          <a class="card spotify link fade" href="https://open.spotify.com/playlist/6rPrB8Su6VBqoALZSoPi0Z?si=kABpWzBbRhOE1TDEf7ScpQ" target="_blank" rel="noopener" aria-label="Open Amir's playlist in Spotify">
-            <span class="art" aria-hidden="true">
-              <img src="./assets/spotify/playlist.jpg" alt="" loading="lazy" onerror="this.closest('.art').classList.add('no-img')" />
-            </span>
-            <span class="info">
+          <!-- Spotify (larger embedded preview) -->
+          <div class="card spotify-card span-2 fade">
+            <div class="sc-head">
               <span class="card-label">soundtrack lately</span>
-              <span class="t">Amir's playlist</span>
-              <span class="s">open in Spotify ↗</span>
-            </span>
-          </a>
-
-          <!-- Featured project -->
-          <a class="card media link proj-preview fade d1" href="https://neuroflows.vercel.app/" target="_blank" rel="noopener" aria-label="NeuroFlow project">
-            <span class="media-thumb">
-              <img src="./assets/projects/neuroflow.jpg" alt="NeuroFlow, 3D CSF flow visualization" loading="lazy"
-                   onerror="this.closest('.media-thumb').classList.add('no-img')" />
-              <span class="thumb-fallback" aria-hidden="true" style="font-family:var(--serif);font-style:italic">NeuroFlow</span>
-            </span>
-            <span class="media-body">
-              <span class="card-label">currently building</span>
-              <span class="media-meta">
-                <span class="media-title">NeuroFlow</span>
-                <span class="go">open ↗</span>
-              </span>
-            </span>
-          </a>
-
-          <!-- Hobbies -->
-          <div class="card card-pad fade d1">
-            <span class="card-label">off the clock</span>
-            <span class="hobbies-list">
-              <span>vibe coding</span><span>gym</span><span>running</span>
-              <span>stocks / investing</span><span>music</span><span>photography / travel</span>
-            </span>
+              <a class="go" href="https://open.spotify.com/playlist/6rPrB8Su6VBqoALZSoPi0Z?si=kABpWzBbRhOE1TDEf7ScpQ" target="_blank" rel="noopener">open in Spotify ↗</a>
+            </div>
+            <div class="sc-embed">
+              <div class="sc-fallback">
+                <img src="./assets/spotify/playlist.jpg" alt="" loading="lazy" onerror="this.style.display='none'" />
+                <span>
+                  <span class="fb-t">Amir's playlist</span><br />
+                  <a class="fb-l" href="https://open.spotify.com/playlist/6rPrB8Su6VBqoALZSoPi0Z?si=kABpWzBbRhOE1TDEf7ScpQ" target="_blank" rel="noopener">open in Spotify ↗</a>
+                </span>
+              </div>
+              <iframe title="Amir's playlist on Spotify" src="https://open.spotify.com/embed/playlist/6rPrB8Su6VBqoALZSoPi0Z?utm_source=generator" loading="lazy" allow="encrypted-media" referrerpolicy="no-referrer" onload="this.style.opacity=1"></iframe>
+            </div>
           </div>
 
-          <!-- Finance -->
-          <div class="card card-pad fade d2">
+          <!-- Finance (minimal) -->
+          <div class="card card-pad span-2 fade d1">
             <span class="card-label">stocks / investing</span>
-            <span class="fin-top"><span class="fin-big">PLTR</span><span class="fin-ret">+300%</span></span>
-            <span class="fin-sub">early Palantir shareholder</span>
-            <span class="fin-detail">Palantir Technologies (PLTR), data, AI, and operations software.</span>
+            <span class="fin-main">early Palantir shareholder</span>
+            <span class="fin-highlight">PLTR +200%+</span>
+            <svg class="fin-spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,21 13,18 26,19 39,12 52,14 65,8 78,9 100,2" fill="none" stroke="rgba(245,245,240,0.55)" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            <span class="fin-sub">watching AI, semis, defense, big tech, and index funds.</span>
+            <div class="ticker-group">
+              <div class="ticker-row">
+                <span class="ticker-label">core</span>
+                <span class="ticker core">PLTR</span><span class="ticker core">VXUS</span><span class="ticker core">VYM</span><span class="ticker core">NVDA</span><span class="ticker core">AVGO</span>
+              </div>
+              <div class="ticker-row">
+                <span class="ticker-label">watching</span>
+                <span class="ticker">AMZN</span><span class="ticker">AAPL</span><span class="ticker">GOOGL</span><span class="ticker">META</span><span class="ticker">TSM</span><span class="ticker">ITA</span><span class="ticker">VTI</span>
+              </div>
+            </div>
             <span class="fin-note">personal note, not financial advice</span>
           </div>
-        </div>
-
-        <!-- Quick links -->
-        <div class="quicklinks fade d3">
-          <a class="qlink" href="https://www.linkedin.com/in/dryusufdev/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a class="qlink" href="https://github.com/dryusufdev" target="_blank" rel="noopener">GitHub ↗</a>
-          <a class="qlink" href="https://www.instagram.com/amirr1x_/" target="_blank" rel="noopener">Instagram ↗</a>
-          <a class="qlink" href="https://www.youtube.com/@amirbuca" target="_blank" rel="noopener">YouTube ↗</a>
-          <a class="qlink" href="https://www.tiktok.com/@chatgptwarrior67" target="_blank" rel="noopener">TikTok ↗</a>
-          <a class="qlink" href="mailto:may23@fsu.edu">Email ↗</a>
-          <a class="qlink" href="./assets/Mahmoud-Yusuf-CV.pdf" download>CV ↓</a>
         </div>
       </div>
     </section>

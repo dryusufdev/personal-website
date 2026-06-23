@@ -53,21 +53,36 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* Typing headline */
-  var typeEl = document.querySelector('.type');
-  if (typeEl) {
-    var out = typeEl.querySelector('.type-out');
-    var text = typeEl.getAttribute('data-text') || (out ? out.textContent : '');
-    if (out && !reduced) {
-      out.textContent = '';
-      var i = 0;
-      (function tick() {
-        out.textContent = text.slice(0, i);
-        if (i <= text.length) { i++; setTimeout(tick, 58); }
-      })();
-    } else if (out) {
-      out.textContent = text;
-    }
+  /* Typing headline (character-by-character; caret stays inline) */
+  function initTypewriter() {
+    const typeEl = document.querySelector('.type[data-text]');
+    if (!typeEl) return;
+
+    const output = typeEl.querySelector('.type-out');
+    if (!output) return;
+
+    const text = typeEl.getAttribute('data-text') || '';
+
+    output.textContent = '';
+
+    let index = 0;
+    const speed = 85;
+    const startDelay = 450;
+
+    window.setTimeout(function typeNext() {
+      output.textContent = text.slice(0, index + 1);
+      index += 1;
+
+      if (index < text.length) {
+        window.setTimeout(typeNext, speed);
+      }
+    }, startDelay);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTypewriter);
+  } else {
+    initTypewriter();
   }
 
   /* Lightbox (gallery) */
@@ -110,6 +125,31 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
     });
+  }
+
+  /* Live site previews: lazy-load iframes; keep fallback if they don't load */
+  var previews = document.querySelectorAll('.site-preview');
+  if (previews.length && 'IntersectionObserver' in window) {
+    var pio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var sp = entry.target;
+        pio.unobserve(sp);
+        var frame = sp.querySelector('.sp-frame');
+        var iframe = sp.querySelector('iframe');
+        if (!iframe || !iframe.getAttribute('data-src')) return;
+        var settled = false;
+        var fail = setTimeout(function () { settled = true; }, 8000); // fallback stays
+        iframe.addEventListener('load', function () {
+          if (settled) return;
+          settled = true; clearTimeout(fail);
+          frame.classList.add('loaded');
+        });
+        iframe.addEventListener('error', function () { clearTimeout(fail); });
+        iframe.src = iframe.getAttribute('data-src');
+      });
+    }, { rootMargin: '300px' });
+    previews.forEach(function (p) { pio.observe(p); });
   }
 
   /* Fade up on load / scroll */

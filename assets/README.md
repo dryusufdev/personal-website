@@ -39,20 +39,32 @@ full grid uses `gallery-1…10`.
 | `gunna-concert-tampa.jpg` | gunna | Tampa, Florida | Gunna concert in Tampa with blue stage lighting | portrait 4:5 |
 | `santa-monica.jpg` | santa monica | California | Amir standing near the ocean at sunset in Santa Monica California | portrait 4:5 |
 
-### Full grid - "the rest"
+### Bottom grid - "the rest" (phone camera-roll style)
 
-| File | Caption | Location |
-|------|---------|----------|
-| `gallery-1.jpg` | california | California |
-| `gallery-2.jpg` | sunset | California |
-| `gallery-3.jpg` | fair night | - |
-| `gallery-4.jpg` | concert | Tampa, Florida |
-| `gallery-5.jpg` | honduras | Honduras |
-| `gallery-6.jpg` | roof view | - |
-| `gallery-7.jpg` | airport | Miami → Honduras - **same masked image as `miami-airport.jpg`** |
-| `gallery-8.jpg` | pizza night | - |
-| `gallery-9.jpg` | downtown | - |
-| `gallery-10.jpg` | coffee walk | - |
+The bottom gallery is laid out like an **iPhone Photos / phone camera roll**: a tight grid
+(`.phone-gallery`, 4 columns desktop, 3 on tablet/mobile) of equal `3 / 4` cards, full color,
+with the same hover overlay + lightbox. Order and metadata are set per item in `gallery.html`
+(`data-caption`, `data-loc`, `alt`). Current map (in display order):
+
+| File | Caption | Location | Alt |
+|------|---------|----------|-----|
+| `gallery-1.jpg` | los angeles | Los Angeles, California | Los Angeles California |
+| `las-vegas.jpg` | las vegas | Las Vegas, Nevada | Casino floor in Las Vegas with colorful slot machines and neon lighting |
+| `ovo-beverly-hills.jpg` | ovo | Beverly Hills, California | Inside the OVO store in Beverly Hills with clothing displayed on a rack |
+| `downtown-los-angeles.jpg` | downtown la | Los Angeles, California | Driving view toward the downtown Los Angeles skyline at sunset |
+| `denver-colorado.jpg` | denver | Denver, Colorado | Interior of Denver airport with open atrium and suspended airplane display |
+| `dallas-texas.jpg` | dallas | Dallas, Texas | Airplane wing seen through a window during a flight near Dallas Texas |
+| `gallery-3.jpg` | north florida fair | Tallahassee, Florida | North Florida Fair in Tallahassee at night |
+| `gallery-4.jpg` | gunna concert | Tampa, Florida | Gunna concert in Tampa Florida |
+| `gallery-5.jpg` | tegucigalpa | Honduras | Tegucigalpa Honduras |
+| `gallery-6.jpg` | construction | Tegucigalpa, Honduras | Construction roof view in Tegucigalpa Honduras |
+| `gallery-9.jpg` | yard house | Tampa, Florida | Yard House in Tampa Florida |
+| `gallery-10.jpg` | capital one cafe | Tampa, Florida | Capital One Cafe coffee walk |
+
+Not shown in the bottom grid (avoid duplicating the curated top section, or removed):
+`gallery-2.jpg` (santa monica pier , featured up top as "santa monica") and `gallery-7.jpg`
+(airport , featured up top). **`gallery-8.jpg` (3 corners pizza) was removed from the visible
+gallery**; the file can stay in the folder but is no longer referenced on the site.
 
 ## Privacy, `miami-airport.jpg` / `gallery-7.jpg`
 
@@ -64,21 +76,36 @@ suitcase, and travel pose remain in full color. A spent luggage-tag barcode is s
 **If you re-crop or swap these files,** keep the boarding pass (name + record locator) out of
 frame before publishing.
 
-## Other media
+## Project previews
 
-| File | Used for | Specs |
+The Projects page shows a small browser-window preview (`.site-preview`) for each live site.
+It lazy-loads an **iframe** of the real site; if the iframe is blocked (X-Frame-Options /
+CSP `frame-ancestors`) or fails to load, the **fallback content stays visible** instead, so a
+broken iframe is never shown. Each fallback uses an image plus the site name + "open site ↗".
+
+| File | Used for | Notes |
 |------|----------|-------|
+| `projects/hydrocephalus-preview.png` | feature visual (hydrocephalus) | title slide, shown with `object-fit: contain` so the text stays readable |
+| `projects/neuroflow.jpg` | NeuroFlow preview fallback (iframe: `neuroflows.vercel.app`) | optional; text fallback shows if absent |
+| `projects/lifescore-icon.png` | LifeScore preview fallback (iframe: `lifescore.dev`) | app icon, fetched from the live site |
+| `projects/brain-basics.jpg` | Brain Basics Lab preview fallback (iframe: `brainbasicslab.vercel.app`) | optional; text fallback shows if absent |
 | `spotify/playlist.jpg` | home "soundtrack lately" card | square, 300×300+ |
-| `projects/hydrocephalus.jpg` | projects feature image | 4:3 or 16:9 |
-| `projects/neuroflow.jpg` | projects feature inset + home "currently building" | 16:9, ~1200×675 |
-| `projects/lifescore.jpg` · `projects/brain-basics.jpg` | project cards | 16:9, ~1200×675 |
 | `og-image.jpg` | social share preview | 1200×630 (use `og-template.html`) |
+
+## Finance / investing card
+
+The home "stocks / investing" card is a **personal interest note, not financial advice**, and
+it is intentionally vague. **Never** put any of the following on the website: exact portfolio
+value, account balance, day gain/loss, share quantities, cost basis, dollar profit/loss, or
+account screenshots. Percentages framed as highlights (e.g. "+200%+") and ticker symbols are
+fine; private account values are not.
 
 ## Notes
 
 - Photos display in **full color**. On hover, gallery/collage cards reveal a caption + location
   overlay (no grayscale effect).
-- The full grid shows photos at natural height (no forced crop), so any aspect ratio works.
+- The bottom gallery is a fixed `3 / 4` camera-roll grid using `object-fit: cover`; set
+  `object-position` inline on a photo if a face/building gets cropped awkwardly.
 - Prefer compressed **JPG/WebP** (e.g. squoosh.app); a couple of the originals are ~4 MB and
   worth shrinking before deploy.
 - Clicking any gallery photo opens a lightbox; captions/locations come from the

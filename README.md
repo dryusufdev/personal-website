@@ -13,10 +13,10 @@ no backend, no build step.
 | `script.js` | Mobile nav, fade-in on scroll, active-section nav state |
 | `assets/` | Portrait, CV, project shots, gallery photos, Spotify album art - see `assets/README.md` |
 
-## Sections
+## Pages
 
-Home (intro + portrait + "now" strip) · About · Projects · Experience · Camera roll · Contact.
-One page, anchor nav, short by design.
+Home · Experiences · Projects · Gear · Gallery · Contact, plus a downloadable CV. Separate
+static pages sharing `styles.css` and `script.js`; kept short and personal by design.
 
 ## Run locally
 
