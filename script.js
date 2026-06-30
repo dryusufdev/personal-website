@@ -37,11 +37,14 @@
     if (!menu) return;
     menu.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('no-scroll'); // release scroll lock
   }
   if (toggle && menu) {
     toggle.addEventListener('click', function () {
       var open = menu.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(open));
+      // lock page scroll while the fullscreen mobile panel is open
+      document.body.classList.toggle('no-scroll', open);
     });
     menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
@@ -166,5 +169,56 @@
     fades.forEach(function (el) { if (!el.classList.contains('in')) io.observe(el); });
   } else {
     fades.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* First-load identity moment (home only): fast, skippable, once per session,
+     and skipped entirely under reduced motion. Never blocks navigation. */
+  var intro = document.getElementById('intro');
+  if (intro) {
+    var introSeen = false;
+    try { introSeen = sessionStorage.getItem('introSeen') === '1'; } catch (e) {}
+    if (reduced || introSeen) {
+      if (intro.parentNode) intro.parentNode.removeChild(intro);
+    } else {
+      try { sessionStorage.setItem('introSeen', '1'); } catch (e) {}
+      intro.hidden = false;
+      var introDone = false;
+      var dismissIntro = function () {
+        if (introDone) return;
+        introDone = true;
+        intro.classList.add('done');
+        setTimeout(function () { if (intro && intro.parentNode) intro.parentNode.removeChild(intro); }, 650);
+        window.removeEventListener('pointerdown', dismissIntro);
+        window.removeEventListener('keydown', dismissIntro);
+        window.removeEventListener('wheel', dismissIntro);
+      };
+      setTimeout(dismissIntro, 1300);            // auto fade-out
+      window.addEventListener('pointerdown', dismissIntro, { passive: true });
+      window.addEventListener('keydown', dismissIntro);
+      window.addEventListener('wheel', dismissIntro, { passive: true });
+    }
+  }
+
+  /* Gentle scroll parallax on the crooked collage cards (desktop only).
+     JS only writes the --py custom property; CSS composes it with the
+     card's rotation/offset, so hover and entrance still work. */
+  var collage = document.querySelector('.home-collage');
+  if (collage && !reduced && window.matchMedia('(min-width: 601px)').matches) {
+    var pcards = Array.prototype.slice.call(collage.querySelectorAll('.photo-card'));
+    var pfactor = pcards.map(function (_, i) { return (i % 2 === 0 ? -1 : 1) * (0.02 + (i % 3) * 0.012); });
+    var pTick = false;
+    var applyParallax = function () {
+      var rect = collage.getBoundingClientRect();
+      var delta = rect.top + rect.height / 2 - window.innerHeight / 2;
+      for (var i = 0; i < pcards.length; i++) {
+        var py = Math.max(-14, Math.min(14, delta * pfactor[i] * -1));
+        pcards[i].style.setProperty('--py', py.toFixed(1) + 'px');
+      }
+      pTick = false;
+    };
+    window.addEventListener('scroll', function () {
+      if (!pTick) { pTick = true; window.requestAnimationFrame(applyParallax); }
+    }, { passive: true });
+    applyParallax();
   }
 })();

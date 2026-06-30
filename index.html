@@ -49,6 +49,15 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- First-load identity moment (home only). JS shows it once per session,
+       fades it out fast, and skips it entirely under reduced motion. -->
+  <div class="intro" id="intro" aria-hidden="true" hidden>
+    <div class="intro-inner">
+      <span class="intro-name">Amir Yusuf</span>
+      <span class="intro-loc">Tallahassee / Tampa</span>
+    </div>
+  </div>
+
   <header class="nav" id="top">
     <nav class="nav-inner" aria-label="Primary">
       <a href="./index.html" class="brand">Amir Yusuf</a>
@@ -74,9 +83,14 @@
           to understand.
         </p>
       </div>
+      <div class="hero-meta" aria-hidden="true">
+        <span>Florida, USA</span>
+        <span>Personal site</span>
+      </div>
+      <a class="hero-scroll" href="#recently" aria-label="Scroll to recent photos"></a>
     </section>
 
-    <section class="recently" aria-labelledby="recently-title">
+    <section class="recently" id="recently" aria-labelledby="recently-title">
       <div class="container">
         <div class="section-kicker fade">camera roll</div>
         <h2 id="recently-title" class="fade">recently</h2>
@@ -102,6 +116,23 @@
             <img src="./assets/gallery/santa-monica.jpg" alt="Amir standing near the ocean at sunset in Santa Monica California" loading="lazy" style="object-position:center 30%" />
             <span class="ph-overlay" aria-hidden="true"><span class="c">santa monica</span><span class="l">California</span></span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- International "Now / Coordinates" status card -->
+    <section class="coordinates fade" aria-label="Current status">
+      <div class="container">
+        <div class="coord-card">
+          <div class="coord-top">
+            <span class="coord-live" aria-hidden="true"></span>
+            <span class="coord-label">Currently</span>
+            <span class="coord-coords" aria-hidden="true">30.43° N · 84.28° W</span>
+          </div>
+          <p class="coord-place">Tallahassee <span aria-hidden="true">/</span> Tampa</p>
+          <ul class="coord-tags">
+            <li>Neuroscience</li><li>research</li><li>building</li><li>photos</li><li>music</li>
+          </ul>
         </div>
       </div>
     </section>
