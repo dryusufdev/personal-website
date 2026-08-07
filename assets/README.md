@@ -60,11 +60,20 @@ with the same hover overlay + lightbox. Order and metadata are set per item in `
 | `gallery-6.jpg` | construction | Tegucigalpa, Honduras | Construction roof view in Tegucigalpa Honduras |
 | `gallery-9.jpg` | yard house | Tampa, Florida | Yard House in Tampa Florida |
 | `gallery-10.jpg` | capital one cafe | Tampa, Florida | Capital One Cafe coffee walk |
+| `watervue-grille-tampa.jpg` | watervue grille | Tampa, Florida | Amir sitting at WaterVue Grille in Tampa Florida on the Fourth of July |
+| `seaworld-orlando.jpg` | seaworld | Orlando, Florida | Two people walking with their backs turned at SeaWorld Orlando at sunset |
+| `sweetgreen-tampa.jpg` | sweetgreen | Tampa, Florida | Inside Sweetgreen in Hyde Park Tampa Florida |
+| `seaworld-orlando-2.jpg` | seaworld | Orlando, Florida | Standing near a lantern at SeaWorld Orlando at dusk |
+
+The home "recently" collage features `predalina`, **`seaworld-orlando.jpg`** (Orlando; it
+replaced the former airport photo), `tegucigalpa-honduras.jpg`, `gunna-concert-tampa.jpg`,
+and `santa-monica.jpg`.
 
 Not shown in the bottom grid (avoid duplicating the curated top section, or removed):
-`gallery-2.jpg` (santa monica pier , featured up top as "santa monica") and `gallery-7.jpg`
-(airport , featured up top). **`gallery-8.jpg` (3 corners pizza) was removed from the visible
-gallery**; the file can stay in the folder but is no longer referenced on the site.
+`gallery-2.jpg` (santa monica pier, featured up top as "santa monica") and `gallery-7.jpg`
+(airport). **`gallery-8.jpg` (3 corners pizza) was removed from the visible gallery**; and
+`miami-airport.jpg` is no longer referenced (the home collage now uses `seaworld-orlando.jpg`).
+Unused files can stay in the folder.
 
 ## Privacy, `miami-airport.jpg` / `gallery-7.jpg`
 

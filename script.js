@@ -30,6 +30,34 @@
     el.textContent = new Date().getFullYear();
   });
 
+  /* Experience durations: read data-start / data-end ("YYYY-MM" or "present"),
+     compute inclusive calendar months (LinkedIn-style), and format naturally.
+     "present" roles recalculate from the current month, so they stay accurate. */
+  function formatDuration(startStr, endStr) {
+    var s = String(startStr).split('-');
+    var sy = parseInt(s[0], 10), sm = parseInt(s[1], 10);
+    var ey, em;
+    if (String(endStr).toLowerCase() === 'present') {
+      var now = new Date();
+      ey = now.getFullYear();
+      em = now.getMonth() + 1;
+    } else {
+      var e = String(endStr).split('-');
+      ey = parseInt(e[0], 10); em = parseInt(e[1], 10);
+    }
+    var months = (ey - sy) * 12 + (em - sm) + 1; // inclusive of both endpoints
+    if (!isFinite(months) || months < 1) months = 1;
+    var yrs = Math.floor(months / 12), mos = months % 12, parts = [];
+    if (yrs > 0) parts.push(yrs + ' ' + (yrs === 1 ? 'yr' : 'yrs'));
+    if (mos > 0) parts.push(mos + ' ' + (mos === 1 ? 'mo' : 'mos'));
+    if (parts.length === 0) parts.push('1 mo');
+    return parts.join(', ');
+  }
+  document.querySelectorAll('.xp-date[data-start]').forEach(function (el) {
+    var out = el.querySelector('.xp-dur');
+    if (out) out.textContent = formatDuration(el.getAttribute('data-start'), el.getAttribute('data-end'));
+  });
+
   /* Mobile nav */
   var toggle = document.getElementById('navToggle');
   var menu = document.getElementById('navMenu');
