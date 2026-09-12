@@ -53,6 +53,11 @@ same hover overlay + lightbox. Order and metadata are per item in `gallery.html`
 
 | File | Caption | Location | Alt |
 |------|---------|----------|-----|
+| `thrift-store-st-pete.jpg` | thrift store | St. Petersburg, Florida | Vintage thrift store with a blue and red graffiti mural in St. Petersburg Florida |
+| `social-status-tampa.jpg` | social status | Tampa, Florida | Sneakers displayed on lit glass shelves at Social Status in Tampa Florida |
+| `planet-fitness-tampa.jpg` | planet fitness | Tampa, Florida | Amir wearing a backwards cap at Planet Fitness in Tampa Florida |
+| `tampa-sunset.jpg` | sunset | Tampa, Florida | Orange sunset sky over an empty parking lot in Tampa Florida |
+| `urban-cantina-tampa.jpg` | urban cantina | Tampa, Florida | Street tacos with lime and onion at Urban Cantina in downtown Tampa Florida |
 | `porsche-911-san-diego.jpg` | porsche | San Diego, California | Porsche 911 Carrera interior at a dealership in San Diego California |
 | `uc-san-diego.jpg` | uc san diego | La Jolla, California | Amir at the UC San Diego undergraduate research conference in La Jolla California |
 | `windansea-beach.jpg` | windansea | La Jolla, California | Sunset over the ocean at Windansea Beach in La Jolla California |
