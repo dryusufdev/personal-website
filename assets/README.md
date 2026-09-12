@@ -25,9 +25,10 @@ assets/
 
 ## Gallery manifest
 
-These files are already in `assets/gallery/`. The home "recently" collage uses the five
-**named** photos; the gallery page "places lately" section uses the same five, and the
-full grid uses `gallery-1…10`.
+These files are already in `assets/gallery/`. The home "recently" collage uses six
+**named** photos (the five originals plus `la-jolla.jpg`); the gallery page "places lately"
+section uses the five originals, and the full square grid uses the named + `gallery-1…10`
+photos listed below.
 
 ### Featured - "places lately" (home collage + top of gallery)
 
@@ -41,13 +42,21 @@ full grid uses `gallery-1…10`.
 
 ### Bottom grid - "the rest" (phone camera-roll style)
 
-The bottom gallery is laid out like an **iPhone Photos / phone camera roll**: a tight grid
-(`.phone-gallery`, 4 columns desktop, 3 on tablet/mobile) of equal `3 / 4` cards, full color,
-with the same hover overlay + lightbox. Order and metadata are set per item in `gallery.html`
-(`data-caption`, `data-loc`, `alt`). Current map (in display order):
+The bottom gallery is a **camera-roll masonry**: `.phone-gallery` uses CSS multi-column
+(`column-count: 4` desktop, 3 tablet, 2 mobile; `column-gap`) and each `.shot` is
+`break-inside: avoid`. Images render at `width:100%; height:auto` (no `object-fit`), so
+**every photo shows whole at its own aspect ratio and is never cropped**. The varied tile
+heights give the wall its rhythm. Full color, staggered fade/scale reveal, lift-on-hover,
+same hover overlay + lightbox. Order and metadata are per item in `gallery.html`
+(`data-caption`, `data-loc`, `alt`); tiles no longer carry size classes. Current map
+(in display order, column-major fill):
 
 | File | Caption | Location | Alt |
 |------|---------|----------|-----|
+| `porsche-911-san-diego.jpg` | porsche | San Diego, California | Porsche 911 Carrera interior at a dealership in San Diego California |
+| `uc-san-diego.jpg` | uc san diego | La Jolla, California | Amir at the UC San Diego undergraduate research conference in La Jolla California |
+| `windansea-beach.jpg` | windansea | La Jolla, California | Sunset over the ocean at Windansea Beach in La Jolla California |
+| `fashion-valley.jpg` | fashion valley | San Diego, California | Fashion Valley shopping center in San Diego California |
 | `gallery-1.jpg` | los angeles | Los Angeles, California | Los Angeles California |
 | `las-vegas.jpg` | las vegas | Las Vegas, Nevada | Casino floor in Las Vegas with colorful slot machines and neon lighting |
 | `ovo-beverly-hills.jpg` | ovo | Beverly Hills, California | Inside the OVO store in Beverly Hills with clothing displayed on a rack |
@@ -63,11 +72,14 @@ with the same hover overlay + lightbox. Order and metadata are set per item in `
 | `watervue-grille-tampa.jpg` | watervue grille | Tampa, Florida | Amir sitting at WaterVue Grille in Tampa Florida on the Fourth of July |
 | `seaworld-orlando.jpg` | seaworld | Orlando, Florida | Two people walking with their backs turned at SeaWorld Orlando at sunset |
 | `sweetgreen-tampa.jpg` | sweetgreen | Tampa, Florida | Inside Sweetgreen in Hyde Park Tampa Florida |
-| `seaworld-orlando-2.jpg` | seaworld | Orlando, Florida | Standing near a lantern at SeaWorld Orlando at dusk |
+
+`seaworld-orlando-2.jpg` (the solo, back-turned lantern shot) was removed from the site and
+the file deleted.
 
 The home "recently" collage features `predalina`, **`seaworld-orlando.jpg`** (Orlando; it
 replaced the former airport photo), `tegucigalpa-honduras.jpg`, `gunna-concert-tampa.jpg`,
-and `santa-monica.jpg`.
+`santa-monica.jpg`, and **`la-jolla.jpg`** (green Porsche Macan on a palm-lined street at
+sunset). `la-jolla.jpg` appears only on the home collage, not the gallery grid.
 
 Not shown in the bottom grid (avoid duplicating the curated top section, or removed):
 `gallery-2.jpg` (santa monica pier, featured up top as "santa monica") and `gallery-7.jpg`
@@ -113,8 +125,8 @@ fine; private account values are not.
 
 - Photos display in **full color**. On hover, gallery/collage cards reveal a caption + location
   overlay (no grayscale effect).
-- The bottom gallery is a fixed `3 / 4` camera-roll grid using `object-fit: cover`; set
-  `object-position` inline on a photo if a face/building gets cropped awkwardly.
+- The bottom gallery is a masonry (CSS columns); photos show whole at their native aspect
+  ratio with no cropping, so no `object-fit`/`object-position` tuning is needed there.
 - Prefer compressed **JPG/WebP** (e.g. squoosh.app); a couple of the originals are ~4 MB and
   worth shrinking before deploy.
 - Clicking any gallery photo opens a lightbox; captions/locations come from the
