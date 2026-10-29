@@ -53,6 +53,9 @@ same hover overlay + lightbox. Order and metadata are per item in `gallery.html`
 
 | File | Caption | Location | Alt |
 |------|---------|----------|-----|
+| `planet-fitness-tallahassee.jpg` | planet fitness | Tallahassee, Florida | Amir walking through Planet Fitness by the judgement free wall in Tallahassee Florida |
+| `faith-presbyterian-pumpkins.jpg` | pumpkin patch | Tallahassee, Florida | Rows of pumpkins at dusk at the Faith Presbyterian Church pumpkin patch in Tallahassee Florida |
+| `tom-brown-park-tennis.jpg` | tennis | Tallahassee, Florida | Playing tennis at dusk on the courts at Tom Brown Park in Tallahassee Florida |
 | `thrift-store-st-pete.jpg` | thrift store | St. Petersburg, Florida | Vintage thrift store with a blue and red graffiti mural in St. Petersburg Florida |
 | `social-status-tampa.jpg` | social status | Tampa, Florida | Sneakers displayed on lit glass shelves at Social Status in Tampa Florida |
 | `planet-fitness-tampa.jpg` | planet fitness | Tampa, Florida | Amir wearing a backwards cap at Planet Fitness in Tampa Florida |
@@ -112,6 +115,9 @@ broken iframe is never shown. Each fallback uses an image plus the site name + "
 | File | Used for | Notes |
 |------|----------|-------|
 | `projects/hydrocephalus-preview.png` | feature visual (hydrocephalus) | title slide, shown with `object-fit: contain` so the text stays readable |
+| `projects/yusuf-msu-research-poster.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 1 | MSU Summer Undergraduate Research Showcase poster + thumbnail |
+| `projects/yusuf-ucsd-presentation.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 2 | UC San Diego slides (converted from `iNPH_UCSD_Presentation.pptx`); `.jpg` is the title slide |
+| `projects/yusuf-cns-poster.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 3 | CNS Annual Meeting digital poster #3020 + thumbnail (page 1 render) |
 | `projects/neuroflow.jpg` | NeuroFlow preview fallback (iframe: `neuroflows.vercel.app`) | optional; text fallback shows if absent |
 | `projects/lifescore-icon.png` | LifeScore preview fallback (iframe: `lifescore.dev`) | app icon, fetched from the live site |
 | `projects/brain-basics.jpg` | Brain Basics Lab preview fallback (iframe: `brainbasicslab.vercel.app`) | optional; text fallback shows if absent |
