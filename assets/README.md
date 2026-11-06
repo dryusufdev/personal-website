@@ -35,10 +35,14 @@ photos listed below.
 | File | Caption | Location | Alt text | Recommended crop |
 |------|---------|----------|----------|------------------|
 | `predalina-tampa.jpg` | predalina | Tampa, Florida | Amir sitting outside at Predalina in Tampa at night | portrait 4:5 |
-| `miami-airport.jpg` | airport | Miami → Honduras | Airport travel moment before flying to Honduras | portrait 4:5 - **see privacy note** |
+| `ovo-beverly-hills.jpg` | ovo | Beverly Hills, California | Inside the OVO store in Beverly Hills with clothing displayed on a rack | portrait 4:5 |
 | `tegucigalpa-honduras.jpg` | tegucigalpa | Honduras | Street view in Tegucigalpa Honduras | portrait 4:5 |
 | `gunna-concert-tampa.jpg` | gunna | Tampa, Florida | Gunna concert in Tampa with blue stage lighting | portrait 4:5 |
 | `santa-monica.jpg` | santa monica | California | Amir standing near the ocean at sunset in Santa Monica California | portrait 4:5 |
+
+`ovo-beverly-hills.jpg` was promoted into this featured strip (replacing `miami-airport.jpg`)
+and is therefore no longer repeated in the bottom grid. `miami-airport.jpg` is now unused
+(the file stays in the folder).
 
 ### Bottom grid - "the rest" (phone camera-roll style)
 
@@ -49,10 +53,17 @@ The bottom gallery is a **camera-roll masonry**: `.phone-gallery` uses CSS multi
 heights give the wall its rhythm. Full color, staggered fade/scale reveal, lift-on-hover,
 same hover overlay + lightbox. Order and metadata are per item in `gallery.html`
 (`data-caption`, `data-loc`, `alt`); tiles no longer carry size classes. Current map
-(in display order, column-major fill):
+(reference list; the exact curated order lives in `gallery.html`. The roll is sequenced as a
+loose story with smooth color transitions: a DC autumn chapter opens, then Tallahassee, Tampa,
+the West Coast trip, travel, Honduras, and a sunset close):
 
 | File | Caption | Location | Alt |
 |------|---------|----------|-----|
+| `georgetown-dc.jpg` | georgetown | Washington, DC | Autumn afternoon on a brick sidewalk lined with rowhouses in Georgetown Washington DC |
+| `georgetown-dc-2.jpg` | georgetown | Washington, DC | Fall foliage over a tree-lined Georgetown street with brick rowhouses in Washington DC |
+| `joint-custody-dc.jpg` | joint custody | Washington, DC | Inside Joint Custody record store in Washington DC with punk flyers and hanging records |
+| `cns-annual-meeting.jpg` | cns annual meeting | Washington, DC | Amir with Lindsey Vonn at the Congress of Neurological Surgeons Annual Meeting in Washington DC |
+| `ultra-bar-dc.jpg` | ultra bar | Washington, DC | Crowd outside Ultra Bar under blue lights at night in Washington DC |
 | `planet-fitness-tallahassee.jpg` | planet fitness | Tallahassee, Florida | Amir walking through Planet Fitness by the judgement free wall in Tallahassee Florida |
 | `faith-presbyterian-pumpkins.jpg` | pumpkin patch | Tallahassee, Florida | Rows of pumpkins at dusk at the Faith Presbyterian Church pumpkin patch in Tallahassee Florida |
 | `tom-brown-park-tennis.jpg` | tennis | Tallahassee, Florida | Playing tennis at dusk on the courts at Tom Brown Park in Tallahassee Florida |
@@ -67,7 +78,6 @@ same hover overlay + lightbox. Order and metadata are per item in `gallery.html`
 | `fashion-valley.jpg` | fashion valley | San Diego, California | Fashion Valley shopping center in San Diego California |
 | `gallery-1.jpg` | los angeles | Los Angeles, California | Los Angeles California |
 | `las-vegas.jpg` | las vegas | Las Vegas, Nevada | Casino floor in Las Vegas with colorful slot machines and neon lighting |
-| `ovo-beverly-hills.jpg` | ovo | Beverly Hills, California | Inside the OVO store in Beverly Hills with clothing displayed on a rack |
 | `downtown-los-angeles.jpg` | downtown la | Los Angeles, California | Driving view toward the downtown Los Angeles skyline at sunset |
 | `denver-colorado.jpg` | denver | Denver, Colorado | Interior of Denver airport with open atrium and suspended airplane display |
 | `dallas-texas.jpg` | dallas | Dallas, Texas | Airplane wing seen through a window during a flight near Dallas Texas |
@@ -115,9 +125,9 @@ broken iframe is never shown. Each fallback uses an image plus the site name + "
 | File | Used for | Notes |
 |------|----------|-------|
 | `projects/hydrocephalus-preview.png` | feature visual (hydrocephalus) | title slide, shown with `object-fit: contain` so the text stays readable |
-| `projects/yusuf-msu-research-poster.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 1 | MSU Summer Undergraduate Research Showcase poster + thumbnail |
+| `projects/yusuf-cns-poster.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 1 | CNS Annual Meeting digital poster #3020 + thumbnail (page 1 render) |
 | `projects/yusuf-ucsd-presentation.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 2 | UC San Diego slides (converted from `iNPH_UCSD_Presentation.pptx`); `.jpg` is the title slide |
-| `projects/yusuf-cns-poster.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 3 | CNS Annual Meeting digital poster #3020 + thumbnail (page 1 render) |
+| `projects/yusuf-msu-research-poster.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 3 | MSU Summer Undergraduate Research Showcase poster + thumbnail |
 | `projects/neuroflow.jpg` | NeuroFlow preview fallback (iframe: `neuroflows.vercel.app`) | optional; text fallback shows if absent |
 | `projects/lifescore-icon.png` | LifeScore preview fallback (iframe: `lifescore.dev`) | app icon, fetched from the live site |
 | `projects/brain-basics.jpg` | Brain Basics Lab preview fallback (iframe: `brainbasicslab.vercel.app`) | optional; text fallback shows if absent |
