@@ -79,6 +79,7 @@ the West Coast trip, travel, Honduras, and a sunset close):
 | `gallery-1.jpg` | los angeles | Los Angeles, California | Los Angeles California |
 | `las-vegas.jpg` | las vegas | Las Vegas, Nevada | Casino floor in Las Vegas with colorful slot machines and neon lighting |
 | `downtown-los-angeles.jpg` | downtown la | Los Angeles, California | Driving view toward the downtown Los Angeles skyline at sunset |
+| `santa-monica-2.jpg` | santa monica | Santa Monica, California | Sunset over a palm-lined street near Red O in Santa Monica California |
 | `denver-colorado.jpg` | denver | Denver, Colorado | Interior of Denver airport with open atrium and suspended airplane display |
 | `dallas-texas.jpg` | dallas | Dallas, Texas | Airplane wing seen through a window during a flight near Dallas Texas |
 | `gallery-3.jpg` | north florida fair | Tallahassee, Florida | North Florida Fair in Tallahassee at night |
@@ -128,6 +129,7 @@ broken iframe is never shown. Each fallback uses an image plus the site name + "
 | `projects/yusuf-cns-poster.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 1 | CNS Annual Meeting digital poster #3020 + thumbnail (page 1 render) |
 | `projects/yusuf-ucsd-presentation.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 2 | UC San Diego slides (converted from `iNPH_UCSD_Presentation.pptx`); `.jpg` is the title slide |
 | `projects/yusuf-msu-research-poster.pdf` + `.jpg` | hydrocephalus "posters & presentations" card 3 | MSU Summer Undergraduate Research Showcase poster + thumbnail |
+| `projects/yusuf-furc-abstract.pdf` + `.jpg` | "Trust but Verify" case study "posters & presentations" card | Accepted abstract #709 (Yusuf, Donato) for the 2027 Florida Undergraduate Research Conference, Kissimmee FL + page-1 thumbnail |
 | `projects/neuroflow.jpg` | NeuroFlow preview fallback (iframe: `neuroflows.vercel.app`) | optional; text fallback shows if absent |
 | `projects/lifescore-icon.png` | LifeScore preview fallback (iframe: `lifescore.dev`) | app icon, fetched from the live site |
 | `projects/brain-basics.jpg` | Brain Basics Lab preview fallback (iframe: `brainbasicslab.vercel.app`) | optional; text fallback shows if absent |
